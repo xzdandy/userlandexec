@@ -1,0 +1,99 @@
+$Id: README,v 1.1 2014/02/14 00:16:45 bediger Exp $
+
+USERLAND EXEC FOR X86_64
+-----------------------
+
+This project is inspired by The Grugq's "userland exec" of 2004.
+It shares no code, I rewrote from scratch. A few function names
+remain the same, but prototypes differ.
+
+Because the implementation of Dietlibc and the GNU dynamic loader
+have changed, I had to write x86_64 position independent code for
+all system calls and library functions.
+
+CONTENTS
+--------
+
+libstatic/ - C and x86_64 assembly for various library
+             calls (strlen(), strtoul(), etc) and system calls (read(),
+             write(), open(), mmap(), etc). Staticly linkable and
+             position independent.
+
+The example of exec'ing a non-executable file.
+example.c
+	- loads ulexec.so via C standard library calls like dl_open()
+      and dl_sym().
+
+ulexec.so constituents:
+	load_elf.c
+	map_file.c
+	print_maps.c
+	stack_fix.c
+	ulexec.c
+	unmap.c
+	ulexec.h
+	- compiled into a position-independent, staticly- linked
+      "shared object", ulexec.so
+
+Another example of how to do userland exec:
+	dyn_unmap_run.c
+	static_dyn_load_run.c
+
+Test programS -
+	ez.c - statically linked minimal program.
+	global2.c - statically-linked read and write globals.
+	globaltest.c
+	dyn_globals.c - ordinary, dynamically-linked, GCC program
+	hw.c  - hello world program, statically linked
+	args2.c - Ordinary dynamically linked program to print command line arguments.
+	margs.c - statically-linked, prints command line arguments.
+	elfauxv.c - statically-linked printout of ELF auxilliary vector.
+	elfauxv_dynamic.c - dynamically-linke ELF aux vector print out.
+	env_test.c - statically linked, prints environment name/value pairs.
+	raw.c - minimal assembly to get to main(), statically linked.
+	places.c
+
+DEMONSTRATION
+-------------
+
+You need a fairly recent version of GNU CC installed. All the above
+are written in pretty clean C89, with the exception of the assembly
+language prolog that calls main(), and the system calls in libstatic/
+You'll also need "make", I don't think any particular version, "makefile"
+is pretty basic.
+
+I've also complied with clang C compiler.  It worked.
+
+You should inspect source code. Don't run this crap on my word. It
+may contain NSA spyware.
+
+Create all programs:
+$ make
+	...
+$
+You should end up with executable named "example", a shared object file
+named "ulexec.so" and a set of compiled test programs, that don't have
+executable permissions.
+
+$ PATH=$PATH:.
+$ export PATH
+$ example ./ulexec.so elfauxv_dynamic
+
+That should show you the contents of the ELF auxilliary vector that the
+linux kernel passes to a newly-created proces, on its stack.
+
+You can try this, to verify that elfauxv_dynamic sees the same thing
+that ld.so sees:
+
+$ LD_SHOW_AUXV=1 ./example ./ulexec.so elfauxv_dynamic
+
+My own personal test for when I was done:
+
+$ example $(which vim) /etc/hosts
+
+Vim is a complicated program, which does dynamic linking itself.  If you
+can run vim with userland exec, you can run anything.
+
+Some childish fun:
+
+$ ./example ./ulexec.so ./example ./ulexec.so ./example ./ulexec.so /usr/bin/cat /proc/self/maps

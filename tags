@@ -1,0 +1,116 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ALIGN	load_elf.c	8;"	d	file:
+ALIGN	ulexec.h	9;"	d
+ALIGNDOWN	load_elf.c	9;"	d	file:
+ALIGNDOWN	ulexec.h	10;"	d
+ALLOCATE	stack_fix.c	7;"	d	file:
+BUFSIZ	elfauxv.c	8;"	d	file:
+CC	libstatic/makefile	/^CC = gcc$/;"	m
+CC	makefile	/^CC = gcc$/;"	m
+CFLAGS	libstatic/makefile	/^CFLAGS = -fPIC -nostdlib -I.$/;"	m
+CFLAGS	makefile	/^CFLAGS = -I. -g -Wall -Wextra -std=gnu99 -nostdlib -fPIC$/;"	m
+JMP_ADDR	dyn_unmap_run.c	11;"	d	file:
+JMP_ADDR	static_dyn_load_run.c	10;"	d	file:
+JMP_ADDR	ulexec.c	9;"	d	file:
+NULL	libstatic/libstatic.h	3;"	d
+OBJS	libstatic/makefile	/^OBJS = linux_close.o linux_exit.o linux_open.o linux_read.o linux_write.o \\$/;"	m
+PGSZ	libstatic/libstatic.h	31;"	d
+ROUNDUP	load_elf.c	7;"	d	file:
+ROUNDUP	ulexec.h	8;"	d
+SET_STACK	dyn_unmap_run.c	12;"	d	file:
+SET_STACK	static_dyn_load_run.c	11;"	d	file:
+SET_STACK	ulexec.c	10;"	d	file:
+block	ulexec.h	/^	char *block;$/;"	m	struct:saved_block
+c_main	dyn_unmap_run.c	/^void c_main(int ac, char **av, char **env)$/;"	f
+c_main	elfauxv.c	/^c_main(int ac, char **av, char **envp)$/;"	f
+c_main	env_test.c	/^c_main(int ac, char **av, char **env)$/;"	f
+c_main	global2.c	/^c_main(int ac, char **av, char **env)$/;"	f
+c_main	globaltest.c	/^c_main(int ac, char **av, char **ev)$/;"	f
+c_main	hw.c	/^void c_main(int ac, char **av, char **env)$/;"	f
+c_main	margs.c	/^void c_main(int ac, char **av, char **env)$/;"	f
+c_main	places.c	/^c_main(int ac, char **av, char **env)$/;"	f
+c_main	raw.c	/^c_main(void *stack, unsigned long argc)$/;"	f
+c_main	static_dyn_load_run.c	/^void c_main(int ac, char **av, char **env)$/;"	f
+cnt	ulexec.h	/^	int cnt;$/;"	m	struct:saved_block
+copy_in	map_file.c	/^copy_in(char *filename, void *address)$/;"	f
+errno	libstatic/errno.c	/^long errno = 0;$/;"	v
+error_msg	dyn_unmap_run.c	/^error_msg(char *msg)$/;"	f
+error_msg	static_dyn_load_run.c	/^error_msg(char *msg)$/;"	f
+error_msg	ulexec.c	/^error_msg(char *msg)$/;"	f
+file_size	libstatic/file_size.c	/^file_size(char *filename)$/;"	f
+global	globaltest.c	/^int global = 12;$/;"	v
+global	places.c	/^unsigned long global = 0x997UL;$/;"	v
+initialized	dyn_globals.c	/^int initialized = 777;$/;"	v
+initialized	global2.c	/^long initialized = 12345678;$/;"	v
+linux_brk	libstatic/linux_sbrk.c	/^void linux_brk(unsigned long addr)$/;"	f
+linux_close	libstatic/linux_close.c	/^linux_close(int fd)$/;"	f
+linux_exit	libstatic/linux_exit.c	/^void linux_exit(int code)$/;"	f
+linux_mprotect	libstatic/linux_mprotect.c	/^linux_mprotect(void *addr, unsigned long len, int prot)$/;"	f
+linux_munmap	libstatic/linux_munmap.c	/^linux_munmap(void *start, unsigned long length)$/;"	f
+linux_open	libstatic/linux_open.c	/^linux_open(const char *pathname, unsigned long flags, unsigned long mode)$/;"	f
+linux_read	libstatic/linux_read.c	/^linux_read(int fd, char *buffer, unsigned long bufferlen)$/;"	f
+linux_stat	libstatic/linux_stat.c	/^linux_stat(const char *path, void *buf)$/;"	f
+linux_write	libstatic/linux_write.c	/^linux_write(int fd, const void *data, unsigned long len)$/;"	f
+load_elf	load_elf.c	/^load_elf(char *mapped, int anywhere, Elf64_Ehdr **elf_ehdr, Elf64_Ehdr **ldso_ehdr)$/;"	f
+main	args2.c	/^main(int ac, char **av)$/;"	f
+main	dyn_globals.c	/^main(int ac, char **av)$/;"	f
+main	elfauxv_dynamic.c	/^main(int ac, char **av, char **envp)$/;"	f
+main	env_test.c	/^main(int ac, char **av, char **env)$/;"	f
+main	example.c	/^main(int ac, char **av, char **env)$/;"	f
+main	ez.c	/^main(int ac, char **av)$/;"	f
+main	libstatic/to_hex.c	/^main(int ac, char **av)$/;"	f
+map_file	map_file.c	/^map_file(char *file_to_map)$/;"	f
+memcopy	load_elf.c	/^memcopy(void *dest, const void *src, unsigned long n)$/;"	f
+memcpy	libstatic/memcpy.c	/^memcpy(void *dest, const void *src, unsigned long n)$/;"	f
+memcpy	static_dyn_load_run.c	/^memcpy(void *dest, const void *src, unsigned long n)$/;"	f
+print_address	dyn_unmap_run.c	/^print_address(char *phrase, void *address)$/;"	f
+print_address	globaltest.c	/^print_address(char *phrase, void *address)$/;"	f
+print_address	static_dyn_load_run.c	/^print_address(char *phrase, void *address)$/;"	f
+print_address	ulexec.c	/^print_address(char *phrase, void *address)$/;"	f
+print_data	elfauxv.c	/^print_data($/;"	f
+print_hex	libstatic/print.c	/^print_hex(int fd, unsigned long i)$/;"	f
+print_long	libstatic/print.c	/^print_long(int fd, unsigned long i)$/;"	f
+print_maps	dyn_unmap_run.c	/^print_maps(void)$/;"	f
+print_maps	elfauxv.c	/^print_maps(void)$/;"	f
+print_maps	elfauxv_dynamic.c	/^print_maps(void)$/;"	f
+print_maps	print_maps.c	/^print_maps(void)$/;"	f
+print_maps	ulexec.c	/^print_maps(void)$/;"	f
+print_string	libstatic/print.c	/^print_string(int fd, char *s)$/;"	f
+printable_aux_type	elfauxv.c	/^printable_aux_type(uint64_t a_val)$/;"	f
+printable_aux_type	elfauxv_dynamic.c	/^printable_aux_type(uint64_t a_val)$/;"	f
+release_args	stack_fix.c	/^release_args(struct saved_block *args)$/;"	f
+save_argv	stack_fix.c	/^save_argv(int argc, char **argv)$/;"	f
+save_elfauxv	stack_fix.c	/^save_elfauxv(char **envp)$/;"	f
+saved_block	ulexec.h	/^struct saved_block {$/;"	s
+size	ulexec.h	/^	int size;$/;"	m	struct:saved_block
+stack_setup	stack_fix.c	/^stack_setup($/;"	f
+std	makefile	/^	gcc -I. -g -Wall -std=gnu99 -nostdlib -fPIC   -c  dyn_unmap_run.c$/;"	m
+std	makefile	/^	gcc -I. -g -Wall -std=gnu99 -nostdlib -fPIC   -c  static_dyn_load_run.c$/;"	m
+std	makefile	/^	gcc -I. -g -Wall -std=gnu99 -nostdlib -fPIC   -c  ulexec.c$/;"	m
+std	makefile	/^	gcc -I. -g -Wall -std=gnu99 -nostdlib -fPIC   -c global2.c$/;"	m
+std	makefile	/^	gcc -I. -g -Wall -std=gnu99 -nostdlib -fPIC   -c globaltest.c$/;"	m
+std	makefile	/^	gcc -I. -g -Wall -std=gnu99 -nostdlib -fPIC   -c hw.c$/;"	m
+std	makefile	/^	gcc -I. -g -Wall -std=gnu99 -nostdlib -fPIC -c raw.c$/;"	m
+std	makefile	/^	gcc -I. -g -std=gnu99 -nostdlib \\$/;"	m
+std	makefile	/^	gcc -I. -g -std=gnu99 -nostdlib raw.o -o raw -Llibstatic -lstatic$/;"	m
+std	makefile	/^	gcc -fPIC -shared -I. -g -std=gnu99 -nostdlib \\$/;"	m
+std	makefile	/^	gcc -g -I. -std=gnu99 -nostdlib -fPIC \\$/;"	m
+strcat	libstatic/string.c	/^strcat(char *dest, const char *src)$/;"	f
+strchr	libstatic/string.c	/^char *strchr(const char *s, int c)$/;"	f
+strlen	libstatic/string.c	/^strlen(const char *s)$/;"	f
+strstr	libstatic/string.c	/^char *strstr(const char *str, char *substr)$/;"	f
+strtoul	libstatic/strtoul.c	/^strtoul(const char *nptr, char **endptr, int base)$/;"	f
+to_decimal	libstatic/print.c	/^to_decimal(unsigned long x, char *p)$/;"	f
+to_hex	libstatic/print.c	/^to_hex(unsigned long n, char *p)$/;"	f
+to_hex	libstatic/to_hex.c	/^to_hex(char *p, unsigned long n)$/;"	f
+uint64_t	elfauxv.c	/^typedef unsigned long uint64_t;$/;"	t	file:
+ulexec	ulexec.c	/^ulexec(int ac, char **av, char **env)$/;"	f
+uninitialized	dyn_globals.c	/^int uninitialized;$/;"	v
+uninitialized	global2.c	/^long uninitialized;$/;"	v
+unmap	dyn_unmap_run.c	/^unmap(char *progname)$/;"	f
+unmap	unmap.c	/^unmap(char *progname)$/;"	f
